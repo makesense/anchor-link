@@ -1,7 +1,7 @@
 {
-    "name": "anchor-link",
+    "name": "libre-link",
     "version": "3.3.5",
-    "description": "Library for authenticating and signing transactions using the Anchor Link protocol",
+    "description": "Library for authenticating and signing transactions using the Libre Link protocol",
     "license": "BSD-3-Clause",
     "main": "lib/anchor-link.js",
     "module": "lib/anchor-link.m.js",
@@ -15,16 +15,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/greymass/anchor-link.git"
+        "url": "git+https://github.com/makesense/libre-link.git"
     },
     "authors": [
         "Johan Nordberg <code@johan-nordberg.com>",
         "Aaron Cox <jesta@greymass.com>"
     ],
-    "bugs": {
-        "url": "https://github.com/greymass/anchor-link/issues"
-    },
-    "homepage": "https://github.com/greymass/anchor-link",
     "files": [
         "lib/*",
         "src/*"
