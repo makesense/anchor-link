@@ -31,7 +31,8 @@ import {
     ResolvedTransaction,
     SigningRequest,
     SigningRequestCreateArguments,
-} from 'eosio-signing-request'
+    SigningRequestEncodingOptions,
+} from 'libre-signing-request'
 
 import {CancelError, IdentityError} from './errors'
 import {LinkChainConfig, LinkOptions} from './link-options'
@@ -197,6 +198,8 @@ export class Link {
     public readonly transport: LinkTransport
     /** Storage adapter used to persist sessions. */
     public readonly storage?: LinkStorage
+    /** Scheme of request for Wallet identification */
+    public readonly scheme: SigningRequestEncodingOptions['scheme']
 
     private callbackService: LinkCallbackService
     private verifyProofs: boolean
@@ -245,6 +248,7 @@ export class Link {
             options.encodeChainIds !== undefined
                 ? options.encodeChainIds
                 : LinkOptions.defaults.encodeChainIds
+        this.scheme = options.scheme
     }
 
     /**
@@ -298,7 +302,7 @@ export class Link {
                     chainId: c.chainId,
                     broadcast: false,
                 },
-                {abiProvider: c, zlib}
+                {abiProvider: c, scheme: this.scheme, zlib}
             )
         } else {
             // multi-chain request
@@ -310,7 +314,7 @@ export class Link {
                     broadcast: false,
                 },
                 // abi's will be pulled from the first chain and assumed to be identical on all chains
-                {abiProvider: this.chains[0], zlib}
+                {abiProvider: this.chains[0], scheme: this.scheme, zlib}
             )
         }
         if (t.prepare) {
@@ -389,6 +393,7 @@ export class Link {
             const resolved = await ResolvedSigningRequest.fromPayload(payload, {
                 zlib,
                 abiProvider: c,
+                scheme: this.scheme,
             })
             // prepend cosigner signature if present
             const cosignerSig = resolved.request.getInfoKey('cosig', {
@@ -737,7 +742,7 @@ export class Link {
                 let request = SigningRequest.fromTransaction(
                     args.chainId,
                     args.serializedTransaction,
-                    {abiProvider: c, zlib}
+                    {abiProvider: c, scheme: this.scheme, zlib}
                 )
                 const callback = this.callbackService.create()
                 request.setCallback(callback.url, true)

@@ -1,5 +1,5 @@
 import type {APIClient} from '@greymass/eosio'
-import type {ChainIdType} from 'eosio-signing-request'
+import type {ChainIdType, SigningRequestEncodingOptions} from 'libre-signing-request'
 import type {LinkStorage} from './link-storage'
 import type {LinkTransport} from './link-transport'
 import type {LinkCallbackService} from './link-callback'
@@ -79,6 +79,10 @@ export interface LinkOptions {
      * @default `true`
      */
     encodeChainIds?: boolean
+    /**
+     * Scheme of request
+     */
+    scheme: SigningRequestEncodingOptions['scheme']
 }
 
 /** @internal */

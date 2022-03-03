@@ -9,7 +9,7 @@ import {
     Serializer,
     UInt64,
 } from '@greymass/eosio'
-import {CallbackPayload, SigningRequest} from 'eosio-signing-request'
+import {CallbackPayload, SigningRequest} from 'libre-signing-request'
 
 import {SealedMessage} from './link-types'
 

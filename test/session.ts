@@ -2,7 +2,7 @@ import {strict as assert} from 'assert'
 import 'mocha'
 
 import {Link, LinkTransport} from '../src'
-import {SigningRequest} from 'eosio-signing-request'
+import {SigningRequest} from 'libre-signing-request'
 import {
     API,
     APIClient,

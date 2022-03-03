@@ -8,7 +8,8 @@
     "types": "lib/libre-link.d.ts",
     "unpkg": "lib/libre-link.bundle.js",
     "scripts": {
-        "prepare": "make"
+        "prepare": "make",
+        "watch": "rollup -c -w"
     },
     "directories": {
         "lib": "lib"
