@@ -1,5 +1,5 @@
 {
-    "name": "libre-link",
+    "name": "@libre-chain/libre-link",
     "version": "3.3.5",
     "description": "Library for authenticating and signing transactions using the Libre Link protocol",
     "license": "BSD-3-Clause",
