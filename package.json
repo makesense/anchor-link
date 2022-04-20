@@ -1,6 +1,6 @@
 {
   "name": "@libre-chain/libre-link",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Library for authenticating and signing transactions using the Libre Link protocol",
   "license": "BSD-3-Clause",
   "main": "lib/libre-link.js",
