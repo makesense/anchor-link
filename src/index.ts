@@ -6,5 +6,5 @@ import {Link} from './index-module'
 export default Link
 
 // expose dependencies
-export * from 'libre-signing-request'
+export * from '@libre-chain/libre-signing-request'
 export * from '@greymass/eosio'

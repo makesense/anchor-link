@@ -32,7 +32,7 @@ import {
     SigningRequest,
     SigningRequestCreateArguments,
     SigningRequestEncodingOptions,
-} from 'libre-signing-request'
+} from '@libre-chain/libre-signing-request'
 
 import {CancelError, IdentityError} from './errors'
 import {LinkChainConfig, LinkOptions} from './link-options'

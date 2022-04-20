@@ -17,4 +17,4 @@ export {
     ChainId,
     ChainIdType,
     ChainName,
-} from 'libre-signing-request'
+} from '@libre-chain/libre-signing-request'
